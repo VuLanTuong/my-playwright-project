@@ -19,3 +19,5 @@ npx playwright test --debug
 # Run last failed tests only
 npx playwright test --last-failed
 ```
+
+# Test case = fx(Arrange, Act, Assert)
