@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify able to add todo items', async ({ page }) => {
-  await page.goto('https://todomvc.com/examples/react/dist/');
+const TODO_URL = 'https://todomvc.com/examples/react/dist/';
 
+test('Verify able to add todo items', async ({ page }) => {
+  await page.goto(TODO_URL);
   const todoInput = page.getByTestId('text-input');
   await todoInput.fill('Buy groceries');
   await todoInput.press('Enter');
@@ -11,7 +12,7 @@ test('Verify able to add todo items', async ({ page }) => {
 });
 
 test('Verify able to mark todo item as completed', async ({ page }) => {
-    await page.goto('https://todomvc.com/examples/react/dist/');
+    await page.goto(TODO_URL);
     const todoInput = page.getByTestId('text-input');
     await todoInput.fill('Buy groceries');
     await todoInput.press('Enter');
@@ -23,7 +24,7 @@ test('Verify able to mark todo item as completed', async ({ page }) => {
 });
 
 test('Verify able to delete todo item', async ({ page }) => {
-    await page.goto('https://todomvc.com/examples/react/dist/');
+    await page.goto(TODO_URL);
     const todoInput = page.getByTestId('text-input');
     await todoInput.fill('Buy groceries');
     await todoInput.press('Enter');
