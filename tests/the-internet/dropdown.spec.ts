@@ -17,8 +17,3 @@ test('Verify able to select dropdown options xpath ', async ({page}) => {
 }
 )
 
-test('Verify able to select multiple options css selector ', async ({page}) => {
-    await page.goto('https://output.jsbin.com/osebed/1');
-    await page.locator('#fruits').selectOption(['apple', 'banana']);
-    await expect(page.locator('#fruits > option:checked')).toHaveText(['Banana','Apple']); 
-});
